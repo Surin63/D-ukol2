@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd7de2ad-ec27-4323-bee9-e46856548fc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="fd7de2ad-ec27-4323-bee9-e46856548fc8" name="Changes" comment="dokonceny domaci ukol.">
       <change beforePath="$PROJECT_DIR$/src/com/engeto/rooms/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/rooms/Guest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engeto/rooms/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/rooms/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engeto/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/rooms/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +47,19 @@
       <option name="presentableId" value="Default" />
       <updated>1696154940109</updated>
     </task>
+    <task id="LOCAL-00001" summary="dokonceny domaci ukol.">
+      <option name="closed" value="true" />
+      <created>1696353728770</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696353728770</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dokonceny domaci ukol." />
+    <option name="LAST_COMMIT_MESSAGE" value="dokonceny domaci ukol." />
   </component>
 </project>

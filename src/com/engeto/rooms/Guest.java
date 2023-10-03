@@ -34,8 +34,8 @@ public class Guest {
     @Override
     public String toString() {
         return
-                "\n" + "Guest Name = " + name +
-                ", birthday = " + birthday;
+                "\n" + "Guest Name = " + name + " "
+                 + birthday;
     }
 }
 
