@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Guest {
     private String name;
     private LocalDate birthday;
-    private boolean pracovni;
+
 
 
     public Guest(String name, LocalDate birthday){
@@ -35,7 +35,7 @@ public class Guest {
     public String toString() {
         return
                 "\n" + "Guest Name = " + name + " "
-                 + birthday;
+                 + "(" +  birthday + ")";
     }
 }
 

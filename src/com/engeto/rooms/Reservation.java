@@ -21,10 +21,10 @@ public class Reservation {
     public String toString() {
         return "\n" + "Reservation: " + "\n" +
                 "Name = " + Name +
-                ", Room Number = " + RoomNumber +
-                ", Check In = " + CheckIn +
-                ", Check Out = " + CheckOut +
-                ", Work trip = " + Pracovni;
+                " Room Number = " + RoomNumber +
+                " Check In = " + CheckIn +
+                " Check Out = " + CheckOut +
+                " Work trip = " + Pracovni;
     }
 }
 

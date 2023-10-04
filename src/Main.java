@@ -33,10 +33,17 @@ public class Main {
                 LocalDate.of(2021, 9, 14),
                 false);
 
+
         List<Reservation> reservationList = new ArrayList<>();
 
         reservationList.add(first);
         reservationList.add(second);
+        reservationList.add(new Reservation("Gabriela Novakova",
+                1,
+                LocalDate.of(2022, 5, 13),
+                        LocalDate.of(2022, 5, 26),
+                true));
+
 
         System.out.println(reservationList + "\n");
 
@@ -48,14 +55,12 @@ public class Main {
                 new Guest("Jana Dvorakova",
                         LocalDate.of(1995, 5, 5));
 
+
         List<Guest> guestList = new ArrayList<>();
         guestList.add(jana);
         guestList.add(adela);
+        guestList.add(new Guest("Gabriela Novakova", LocalDate.of(1991, 3, 15)));
         System.out.println(guestList);
-
-
-
-
 
     }
 
