@@ -59,7 +59,7 @@ public class Room {
     @Override
     public String toString(){
         return
-                "\n" + "Room number: " + numberOfRoom +
+                " Room number: " + numberOfRoom +
                 ", Beds = " + numberofBed +
                 ", View on sea = " + viewOnSea +
                 ", Balcony = " + balcony +
