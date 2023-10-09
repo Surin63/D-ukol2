@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Booking {
-    private Guest guest, guest2;
-    private List<Guest> otherGuest = new ArrayList<>();
+    private Guest guest;
+    private List<Guest> guestList = new ArrayList<>();
     private Room room;
     private LocalDate checkIn;
     private LocalDate checkOut;
@@ -22,17 +22,16 @@ public class Booking {
         this.checkOut = checkOut;
         this.typeOfVacation = typeOfVacation;
     }
-
-    public Booking(Guest guest, Guest guest2, Room room, LocalDate checkIn, LocalDate checkOut, String typeOfVacation) {
-        this.guest = guest;
-        this.guest2 = guest2;
-        this.room = room;
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
-        this.typeOfVacation = typeOfVacation;
+    public void addGuest(Guest newGuest) {
+        guestList.add(newGuest);
+    }
+    public void removeGuest(Guest guest) {
+        guestList.remove(guest);
     }
 
-
+    public List<Guest> getGuests() {
+        return new ArrayList<Guest>(guestList);
+    }
 
     public Guest getGuest() {
         return guest;
@@ -42,13 +41,7 @@ public class Booking {
         this.guest = guest;
     }
 
-    public Guest getGuest2() {
-        return guest2;
-    }
 
-    public void setGuest2(Guest guest2) {
-        this.guest2 = guest2;
-    }
 
     public Room getRoom() {
         return room;
@@ -85,7 +78,7 @@ public class Booking {
     @Override
     public String toString() {
         return "\n" + "Reservation: " + "\n" +
-                    guest + guest2 +
+                    guest + new ArrayList<Guest>(guestList) +
                     room +
                     " Check In = " + checkIn +
                     " Check Out = " + checkOut +

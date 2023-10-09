@@ -41,11 +41,12 @@ public class Main {
                 LocalDate.of(2021, 7, 19),
                 LocalDate.of(2021, 7, 26),
                 "working");
-        Booking second = new Booking(guest1, guest2,
+        Booking second = new Booking(guest1,
                 room3,
                 LocalDate.of(2021, 9, 1),
                 LocalDate.of(2021, 9, 14),
                 "recreational");
+                second.addGuest(guest2);
 
 
 
