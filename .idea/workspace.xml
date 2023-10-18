@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd7de2ad-ec27-4323-bee9-e46856548fc8" name="Changes" comment="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem.">
+    <list default="true" id="fd7de2ad-ec27-4323-bee9-e46856548fc8" name="Changes" comment="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem.&#10;&#10;Podarilo se mi vlozit ArrayList Guest do seznamu Booking a uz to nevypisuje null">
+      <change afterPath="$PROJECT_DIR$/src/com/engeto/rooms/BookingManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/engeto/rooms/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/rooms/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/engeto/rooms/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/rooms/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/engeto/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/rooms/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +86,32 @@
       <option name="project" value="LOCAL" />
       <updated>1696776466399</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem.&#10;&#10;Podarilo se mi vlozit ArrayList Guest do seznamu Booking a uz to nevypisuje null">
+      <option name="closed" value="true" />
+      <created>1696858632259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696858632259</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dokonceny domaci ukol." />
     <MESSAGE value="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem." />
-    <option name="LAST_COMMIT_MESSAGE" value="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem." />
+    <MESSAGE value="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem.&#10;&#10;Podarilo se mi vlozit ArrayList Guest do seznamu Booking a uz to nevypisuje null" />
+    <option name="LAST_COMMIT_MESSAGE" value="zmena v tridach a zkouseni pridavani primych objektu do rezervace&#10;nejde mi porad vymazat vypis null u rezervace s 1 hostem.&#10;&#10;Podarilo se mi vlozit ArrayList Guest do seznamu Booking a uz to nevypisuje null" />
   </component>
 </project>

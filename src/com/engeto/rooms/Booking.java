@@ -6,32 +6,67 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Booking {
-    private Guest guest;
+    public static int nextIndex = 1;
+    private int index = nextIndex++;
+    List<Booking> bookingList = new ArrayList<>();
+    private Booking booking;
     private List<Guest> guestList = new ArrayList<>();
+    private Guest guest;
+    private List<Guest> otherGuests = new ArrayList<>();
     private Room room;
     private LocalDate checkIn;
     private LocalDate checkOut;
-    private String typeOfVacation ;
+    private boolean isWorkingVacation;
+    private int numbersOfGuests;
 
 
 
-    public Booking(Guest guest, Room room, LocalDate checkIn, LocalDate checkOut, String typeOfVacation) {
+    public Booking(Guest guest, Room room, LocalDate checkIn, LocalDate checkOut, boolean isWorkingVacation) {
         this.guest = guest;
         this.room = room;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        this.typeOfVacation = typeOfVacation;
+        this.isWorkingVacation = isWorkingVacation;
+
     }
-    public void addGuest(Guest newGuest) {
-        guestList.add(newGuest);
+    public Booking(Guest guest, Room room, LocalDate checkIn, LocalDate checkOut, boolean isWorkingVacation, List<Guest> otherGuests) {
+        this.guest = guest;
+        this.room = room;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+        this.isWorkingVacation = isWorkingVacation;
+        this.otherGuests = new ArrayList<>();
+
     }
+    public void add(Booking newBooking) {
+        bookingList.add(newBooking);
+    }
+    public int getIndex() {
+        return index;
+    }
+    public Booking getBookings(){
+        return booking;
+    }
+    public void addOtherGuest(Guest newOtherGuest) {
+        otherGuests.add(newOtherGuest);
+    }
+    public void addGuest (Guest newGuestList) {guestList.add(newGuestList);}
     public void removeGuest(Guest guest) {
-        guestList.remove(guest);
+        otherGuests.remove(guest);
     }
 
-    public List<Guest> getGuests() {
-        return new ArrayList<Guest>(guestList);
+    public List<Guest> getOtherGuests() {
+        return new ArrayList<Guest>(otherGuests);
     }
+
+    public int getNumbersOfGuests() {
+        return numbersOfGuests;
+    }
+
+    public void setNumbersOfGuests(int numbersOfGuests) {
+        this.numbersOfGuests= otherGuests.size();
+    }
+
 
     public Guest getGuest() {
         return guest;
@@ -67,22 +102,50 @@ public class Booking {
         this.checkOut = checkOut;
     }
 
-    public String getTypeOfVacation() {
-        return typeOfVacation;
+    public boolean getWorkingVacation() {
+        return isWorkingVacation;
     }
 
-    public void setTypeOfVacation(String typeOfVacation) {
-        this.typeOfVacation = typeOfVacation;
+    public void setWorkingVacation(boolean workingVacation) {
+        this.isWorkingVacation = workingVacation;
+    }
+
+    public List<Guest> getGuestList() {
+        return guestList;
+    }
+
+    public void setGuestList(List<Guest> guestList) {
+        this.guestList = guestList;
+    }
+
+    public void setOtherGuests(List<Guest> otherGuests) {
+        this.otherGuests = otherGuests;
+    }
+
+    public List<Booking> getBookingList() {
+        return bookingList;
+    }
+
+    public void setBookingList(List<Booking> bookingList) {
+        this.bookingList = bookingList;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
     }
 
     @Override
     public String toString() {
-        return "\n" + "Reservation: " + "\n" +
-                    guest + new ArrayList<Guest>(guestList) +
+        return "\n" + "Booking" +index +": "+
+                    guest + new ArrayList<Guest>(otherGuests) +
                     room +
                     " Check In = " + checkIn +
                     " Check Out = " + checkOut +
-                    " Work trip = " + typeOfVacation;
+                    " Type of Vacation = " + isWorkingVacation;
     }
 }
 

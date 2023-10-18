@@ -16,6 +16,8 @@ public class Guest {
 
     }
 
+
+
     public String getName() {
         return name;
     }
@@ -38,7 +40,7 @@ public class Guest {
     @Override
     public String toString() {
         return
-               " Guest Name = " + name + " "+surname +" "
+               "\n"+name + " "+surname +" "
                  + "(" + birthday+ ")";
     }
 }

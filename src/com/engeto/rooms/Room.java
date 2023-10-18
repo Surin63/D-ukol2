@@ -2,7 +2,7 @@ package com.engeto.rooms;
 
 public class Room {
     private int numberOfRoom;
-    private int numberofBed;
+    private int numberOfBed;
     private boolean viewOnSea;
     private boolean balcony;
     private int price;
@@ -10,7 +10,7 @@ public class Room {
 
     public Room(int numberOfRoom, int numberofBed, boolean viewOnSea, boolean balcony, int price) {
         this.numberOfRoom = numberOfRoom;
-        this.numberofBed = numberofBed;
+        this.numberOfBed = numberofBed;
         this.viewOnSea = viewOnSea;
         this.balcony = balcony;
         this.price = price;
@@ -25,11 +25,11 @@ public class Room {
     }
 
     public int getNumberofBed() {
-        return numberofBed;
+        return numberOfBed;
     }
 
     public void setNumberofBed(int numberofBed) {
-        this.numberofBed = numberofBed;
+        this.numberOfBed = numberofBed;
     }
 
     public boolean isViewOnSea() {
@@ -37,7 +37,9 @@ public class Room {
     }
 
     public void setViewOnSea(boolean viewOnSea) {
+
         this.viewOnSea = viewOnSea;
+
     }
 
     public boolean isBalcony() {
@@ -60,7 +62,7 @@ public class Room {
     public String toString(){
         return
                 " Room number: " + numberOfRoom +
-                ", Beds = " + numberofBed +
+                ", Beds = " + numberOfBed +
                 ", View on sea = " + viewOnSea +
                 ", Balcony = " + balcony +
                 ", Price = " + price + " kc";
