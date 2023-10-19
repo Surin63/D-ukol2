@@ -35,7 +35,7 @@ public class Booking {
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.isWorkingVacation = isWorkingVacation;
-        this.otherGuests = new ArrayList<>();
+        this.otherGuests = otherGuests;
 
     }
     public void add(Booking newBooking) {
@@ -64,10 +64,10 @@ public class Booking {
     }
 
     public void setNumbersOfGuests(int numbersOfGuests) {
-        for (Booking booking : bookingList) {
-
-        }
+        this.numbersOfGuests = numbersOfGuests;
     }
+
+
 
 
     public Guest getGuest() {

@@ -133,7 +133,7 @@ public class Main {
         // 9. vytvoreni cyklu rezervaci pro jednu osobu na jine datumy
     //  vytvoreno trosku neatraktivne ale funkcni.
     private static void fillListBookings5(List<Booking> bookingList, Guest guest5, Room room2) {
-        int numberOfBookings = 1;
+        int numberOfBookings = 10;
         LocalDate checkIn = LocalDate.of(2023, 8, 1);
         LocalDate checkOut = LocalDate.of(2023, 8, 2);
         for (int i = 0; i < numberOfBookings ; i++)
@@ -141,42 +141,8 @@ public class Main {
                     checkIn,
                     checkOut,
                     false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(2),
-                        checkOut.plusDays(2),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(4),
-                        checkOut.plusDays(4),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(6),
-                        checkOut.plusDays(6),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(8),
-                        checkOut.plusDays(8),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(10),
-                        checkOut.plusDays(10),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(12),
-                        checkOut.plusDays(12),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(14),
-                        checkOut.plusDays(14),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(16),
-                        checkOut.plusDays(16),
-                        false));
-                bookingList.add(new Booking(guest5, room2,
-                        checkIn.plusDays(18),
-                        checkOut.plusDays(18),
-                        false));
+                checkIn= checkIn.plusDays(2);
+                checkOut = checkOut.plusDays(2);
 
 
         }
