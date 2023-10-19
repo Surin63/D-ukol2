@@ -8,7 +8,7 @@ import java.util.List;
 public class Booking {
     public static int nextIndex = 1;
     private int index = nextIndex++;
-    List<Booking> bookingList = new ArrayList<>();
+    private List<Booking> bookingList = new ArrayList<>();
     private Booking booking;
     private List<Guest> guestList = new ArrayList<>();
     private Guest guest;
@@ -64,7 +64,9 @@ public class Booking {
     }
 
     public void setNumbersOfGuests(int numbersOfGuests) {
-        this.numbersOfGuests= otherGuests.size();
+        for (Booking booking : bookingList) {
+
+        }
     }
 
 
@@ -141,7 +143,7 @@ public class Booking {
     @Override
     public String toString() {
         return "\n" + "Booking" +index +": "+
-                    guest + new ArrayList<Guest>(otherGuests) +
+                    guest + otherGuests +
                     room +
                     " Check In = " + checkIn +
                     " Check Out = " + checkOut +

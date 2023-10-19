@@ -44,6 +44,8 @@ public class Main {
         guestList.add(guest5);
         System.out.println("Information about guests :"+guestList);
         System.out.println("\n");
+        List<Guest> guestOtherList = new ArrayList<>();
+        guestOtherList.add(guest2);
 
         // 2,Vytvoreni pokoju s jejich vypisem na obrazovku
 
@@ -62,7 +64,7 @@ public class Main {
         Booking booking1 = new Booking(guest1, room1,
                 LocalDate.of(2021, 7, 19),
                 LocalDate.of(2021, 7, 26),
-                true);
+                true, guestOtherList);
                 booking1.setNumbersOfGuests(1);
 
         // 7,8,10,Vytvoreni rezervace za pomoci volani objektu hosta a pokoje a pridani dalsiho hosta
@@ -110,7 +112,7 @@ public class Main {
 
         // 11 Ve tride projektu priprav metodu pro vypis seznamu vsech rezervaci formutu:
         // datum od az datum do : Jmeno hlavniho hosta (datum narozeni) [pocet hostu, vyhled na more ano/ne] za cena
-        //porad mam spatny format
+        // porad mam spatny format
 
         for (Booking booking : bookingList) {
             System.out.println(booking.getCheckIn()+" to "+booking.getCheckOut()+ " : "+booking.getNumbersOfGuests() +booking.getRoom());
