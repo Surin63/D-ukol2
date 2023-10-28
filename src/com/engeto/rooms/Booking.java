@@ -2,6 +2,7 @@ package com.engeto.rooms;
 
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,26 +12,26 @@ public class Booking {
     private List<Booking> bookingList = new ArrayList<>();
     private Booking booking;
     private List<Guest> guestList = new ArrayList<>();
-    private Guest guest;
+    private Guest mainGuest;
     private List<Guest> otherGuests = new ArrayList<>();
     private Room room;
     private LocalDate checkIn;
     private LocalDate checkOut;
     private boolean isWorkingVacation;
-    private int numbersOfGuests;
 
 
 
-    public Booking(Guest guest, Room room, LocalDate checkIn, LocalDate checkOut, boolean isWorkingVacation) {
-        this.guest = guest;
+
+    public Booking(Guest mainGuest, Room room, LocalDate checkIn, LocalDate checkOut, boolean isWorkingVacation) {
+        this.mainGuest = mainGuest;
         this.room = room;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.isWorkingVacation = isWorkingVacation;
 
     }
-    public Booking(Guest guest, Room room, LocalDate checkIn, LocalDate checkOut, boolean isWorkingVacation, List<Guest> otherGuests) {
-        this.guest = guest;
+    public Booking(Guest mainGuest, Room room, LocalDate checkIn, LocalDate checkOut, boolean isWorkingVacation, List<Guest> otherGuests) {
+        this.mainGuest = mainGuest;
         this.room = room;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -38,6 +39,10 @@ public class Booking {
         this.otherGuests = otherGuests;
 
     }
+    public Booking() {
+    }
+
+
     public void add(Booking newBooking) {
         bookingList.add(newBooking);
     }
@@ -60,22 +65,38 @@ public class Booking {
     }
 
     public int getNumbersOfGuests() {
-        return numbersOfGuests;
+        int numberOfGuests = 0;
+        if (mainGuest != null) {
+            numberOfGuests ++;
+        }
+        if (otherGuests != null) {
+            numberOfGuests += otherGuests.size();
+        }
+        return numberOfGuests;
+
+        }
+        public long getBookingLength() {
+        LocalDate start = checkIn;
+        LocalDate end = checkOut;
+        long daysBetween = ChronoUnit.DAYS.between(start, end);
+        return daysBetween;
+
+        }
+        public long getPrice(){
+        return (long) (getBookingLength() * getRoom().getPrice());
+        }
+
+
+
+
+
+
+    public Guest getMainGuest() {
+        return mainGuest;
     }
 
-    public void setNumbersOfGuests(int numbersOfGuests) {
-        this.numbersOfGuests = numbersOfGuests;
-    }
-
-
-
-
-    public Guest getGuest() {
-        return guest;
-    }
-
-    public void setGuest(Guest guest) {
-        this.guest = guest;
+    public void setMainGuest(Guest mainGuest) {
+        this.mainGuest = mainGuest;
     }
 
 
@@ -140,10 +161,11 @@ public class Booking {
         this.booking = booking;
     }
 
+
     @Override
     public String toString() {
         return "\n" + "Booking" +index +": "+
-                    guest + otherGuests +
+                mainGuest + otherGuests +
                     room +
                     " Check In = " + checkIn +
                     " Check Out = " + checkOut +

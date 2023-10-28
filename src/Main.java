@@ -64,35 +64,34 @@ public class Main {
         Booking booking1 = new Booking(guest1, room1,
                 LocalDate.of(2021, 7, 19),
                 LocalDate.of(2021, 7, 26),
-                true, guestOtherList);
-                booking1.setNumbersOfGuests(1);
+                true);
+
 
         // 7,8,10,Vytvoreni rezervace za pomoci volani objektu hosta a pokoje a pridani dalsiho hosta
         Booking booking2 = new Booking(guest1,
                 room3,
                 LocalDate.of(2021, 9, 1),
                 LocalDate.of(2021, 9, 14),
-                false);
-                booking2.addOtherGuest(guestList.get(1));
-                booking2.setNumbersOfGuests(2);
+                false, guestOtherList);
+
 
         Booking booking3 = new Booking(guest3, room3,
                 LocalDate.of(2023, 6, 1),
                 LocalDate.of(2023, 6, 7),
                 true);
-                booking3.setNumbersOfGuests(1);
+
 
         Booking booking4 = new Booking(guest4, room2,
                 LocalDate.of(2023, 7, 18),
                 LocalDate.of(2023, 7, 21),
                 false);
-                booking4.setNumbersOfGuests(1);
+
 
         Booking booking6 = new Booking(guest5, room3,
                 LocalDate.of(2023, 8,1),
                 LocalDate.of(2023, 8, 31),
                 true);
-                booking6.setNumbersOfGuests(1);
+
 
 
 
@@ -107,16 +106,30 @@ public class Main {
         bookingList.add(booking6);
         fillListBookings5(bookingList, guest5, room2);
 
-        System.out.println(bookingList);
-        System.out.println("\n");
+
+        BookingManager newBooking = new BookingManager();
+        newBooking.addAllBookings(bookingList);
+        int indexListBooking = 1;
+        System.out.println("Vypise rezervaci podle indexu: (" + indexListBooking + newBooking.getBooking(0));
+        System.out.print("\n");
+        Booking bookingAll = new Booking();
+        System.out.println("Pocet vsech hostu: " +newBooking.getNumberOfGuests());
+        System.out.println("Pocet vsech rezervaci: " +newBooking.getNumberOfBookings());
+        System.out.println("Prumernz pocet hostu na jednu rezervaci: " + newBooking.getAveregeGuests(newBooking.getNumberOfGuests()));
 
         // 11 Ve tride projektu priprav metodu pro vypis seznamu vsech rezervaci formutu:
         // datum od az datum do : Jmeno hlavniho hosta (datum narozeni) [pocet hostu, vyhled na more ano/ne] za cena
-        // porad mam spatny format
+        System.out.println("Vypise vsechny rezervace z BookingManager: ");
 
-        for (Booking booking : bookingList) {
-            System.out.println(booking.getCheckIn()+" to "+booking.getCheckOut()+ " : "+booking.getNumbersOfGuests() +booking.getRoom());
-        }
+
+            System.out.println("Seznam vsech rezervaci: ");
+            for (Booking booking : bookingList) {
+                String seaView = booking.getRoom().isViewOnSea() ? "ano" : "ne";
+                System.out.println(booking.getCheckIn() + " to "
+                        + booking.getCheckOut() + " " + booking.getMainGuest()
+                        +"[" + booking.getNumbersOfGuests() + ", " +seaView+ "]" + " price: "
+                        +booking.getPrice());
+            }
 
         // 5 vytvoreni metody ktera vraci pocet Working vacations.
         int numberOfWorkingBookings;
@@ -125,13 +138,13 @@ public class Main {
             if (booking.getWorkingVacation()) numberOfWorkingBookings++;
 
         }
+        System.out.print("\n");
         System.out.println("Number of Working Vacation is: "+numberOfWorkingBookings + ",");
         }
 
 
 
         // 9. vytvoreni cyklu rezervaci pro jednu osobu na jine datumy
-    //  vytvoreno trosku neatraktivne ale funkcni.
     private static void fillListBookings5(List<Booking> bookingList, Guest guest5, Room room2) {
         int numberOfBookings = 10;
         LocalDate checkIn = LocalDate.of(2023, 8, 1);
@@ -145,16 +158,20 @@ public class Main {
                 checkOut = checkOut.plusDays(2);
 
 
-        }
-
-        System.out.println("\n");
-
-
-
+            }
 
 
 
         }
+
+
+
+
+
+
+
+
+
 
     }
 

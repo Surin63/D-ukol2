@@ -40,7 +40,7 @@ public class Guest {
     @Override
     public String toString() {
         return
-               "\n"+name + " "+surname +" "
+               name + " "+surname +" "
                  + "(" + birthday+ ")";
     }
 }
