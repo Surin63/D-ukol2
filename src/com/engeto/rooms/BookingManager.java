@@ -6,7 +6,7 @@ import java.util.List;
 public class BookingManager {
     private List<Booking> allBooking = new ArrayList<>();
 
-    double avarageGuests;
+    double averageGuests;
 
 
 
@@ -26,10 +26,10 @@ public class BookingManager {
         return allBooking.size();
     }
     public double getAvarageGuests() {
-        return avarageGuests;
+        return averageGuests;
     }
     public void setAvarageGuests(double avarageGuests) {
-        this.avarageGuests = avarageGuests;
+        this.averageGuests = avarageGuests;
     }
     public int getNumberOfGuests(){
         int count = 0;

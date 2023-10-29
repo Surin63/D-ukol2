@@ -110,24 +110,22 @@ public class Main {
         BookingManager newBooking = new BookingManager();
         newBooking.addAllBookings(bookingList);
         int indexListBooking = 1;
-        System.out.println("Vypise rezervaci podle indexu: (" + indexListBooking + newBooking.getBooking(0));
+        System.out.println("List of booking with index: (" + indexListBooking + newBooking.getBooking(0));
         System.out.print("\n");
-        Booking bookingAll = new Booking();
-        System.out.println("Pocet vsech hostu: " +newBooking.getNumberOfGuests());
-        System.out.println("Pocet vsech rezervaci: " +newBooking.getNumberOfBookings());
-        System.out.println("Prumernz pocet hostu na jednu rezervaci: " + newBooking.getAveregeGuests(newBooking.getNumberOfGuests()));
+
+        System.out.println("Number of all guests: " +newBooking.getNumberOfGuests());
+        System.out.println("Number of all bookings: " +newBooking.getNumberOfBookings());
+        System.out.println("Average number of guests for booking: " + newBooking.getAveregeGuests(newBooking.getNumberOfGuests()));
+        System.out.println("\n");
 
         // 11 Ve tride projektu priprav metodu pro vypis seznamu vsech rezervaci formutu:
         // datum od az datum do : Jmeno hlavniho hosta (datum narozeni) [pocet hostu, vyhled na more ano/ne] za cena
-        System.out.println("Vypise vsechny rezervace z BookingManager: ");
-
-
-            System.out.println("Seznam vsech rezervaci: ");
+        System.out.println("List of all bookings: ");
             for (Booking booking : bookingList) {
-                String seaView = booking.getRoom().isViewOnSea() ? "ano" : "ne";
+                String seaView = booking.getRoom().isViewOnSea() ? "Yes" : "No";
                 System.out.println(booking.getCheckIn() + " to "
                         + booking.getCheckOut() + " " + booking.getMainGuest()
-                        +"[" + booking.getNumbersOfGuests() + ", " +seaView+ "]" + " price: "
+                        +"[" + booking.getNumbersOfGuests() + ", "+seaView+ "]" + " price: "
                         +booking.getPrice());
             }
 
@@ -140,6 +138,28 @@ public class Main {
         }
         System.out.print("\n");
         System.out.println("Number of Working Vacation is: "+numberOfWorkingBookings + ",");
+
+        System.out.println("\n"+"List of first 8 recreational bookings in database: ");
+        int numberOfRecreationalBookings = 0;
+        for (Booking booking : bookingList) {
+            if(!booking.getWorkingVacation() && numberOfRecreationalBookings < 8) {
+                numberOfRecreationalBookings++;
+                System.out.println("Booking number: " + booking.getIndex() + ". " +booking.getMainGuest());
+            }
+        }
+        int numberOfGuest1 = 0;
+        int numberOfGuest2 = 0;
+        int numberOfMoreGuest = 0;
+        for(Booking booking : bookingList) {
+            int numberOfGuests = booking.getNumbersOfGuests();
+            if( numberOfGuests == 1) {numberOfGuest1++; }
+            else if(numberOfGuests == 2) {numberOfGuest2++; }
+            else numberOfMoreGuest++;
+        }
+        System.out.println("\n");
+        System.out.println("Total number with 1 guest: " +numberOfGuest1);
+        System.out.println("Total number with 2 guests: " +numberOfGuest2);
+        System.out.println("Total number with more then 2 guests: " +numberOfMoreGuest);
         }
 
 
